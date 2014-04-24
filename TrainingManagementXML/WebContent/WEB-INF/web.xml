@@ -13,7 +13,7 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/application-config.xml</param-value>
+        <param-value>/WEB-INF/spring/application-config.xml</param-value>
     </context-param>
 
     <listener>
@@ -25,17 +25,17 @@ http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 		- Servlet that dispatches request to registered handlers (Controller implementations).
 	-->
     <servlet>
-        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-name>DispatcherServlet</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>/WEB-INF/mvc-config.xml</param-value>
+            <param-value>/WEB-INF/spring/mvc-config.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>dispatcherServlet</servlet-name>
+        <servlet-name>DispatcherServlet</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
