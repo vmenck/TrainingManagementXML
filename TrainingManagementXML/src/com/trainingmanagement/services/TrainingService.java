@@ -2,13 +2,15 @@ package com.trainingmanagement.services;
 
 import java.util.List;
 
+import com.trainingmanagement.beans.Training;
+
 public interface TrainingService 
 {
-    public List<String> getAllTraining();
+    public List<Training> getAllTraining();
 
-    public void add(String trainig);
+    public void add(Training trainig);
 
-    public void delete(String trainig);
+    public void delete(Training trainig);
 
     public void deleteAll();	
 }

@@ -5,26 +5,28 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.trainingmanagement.beans.Training;
+
 @Service("trainingService")
 public class TrainingServiceImpl implements TrainingService 
 {
 	
-	private static List<String> trainingList = new ArrayList<String>();
+	private static List<Training> trainingList = new ArrayList<Training>();
 
 	@Override
-	public List<String> getAllTraining() 
+	public List<Training> getAllTraining() 
 	{
 		return trainingList;
 	}
 
 	@Override
-	public void add(String trainig) 
+	public void add(Training trainig) 
 	{
 		trainingList.add(trainig);
 	}
 
 	@Override
-	public void delete(String trainig) 
+	public void delete(Training trainig) 
 	{
         if (trainingList.contains(trainig)) 
         {

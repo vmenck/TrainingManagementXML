@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.trainingmanagement.beans.Training;
 import com.trainingmanagement.services.TrainingServiceImpl;
 
 @Controller
@@ -18,21 +20,21 @@ public class TrainingController
 	@Autowired
 	private TrainingServiceImpl trainingService;
 
-	@RequestMapping("/trainingList")
+	@RequestMapping(value = "/trainingList", method = RequestMethod.GET, headers="Accept=application/json")	
 	public @ResponseBody
-	List<String> getTrainingList() 
+	List<Training> getTrainingList() 
 	{
 		return trainingService.getAllTraining();
 	}
 
-	@RequestMapping(value = "/addTraining/{training}", method = RequestMethod.POST)
-	public @ResponseBody void addTraining(@PathVariable("training") String training) 
+	@RequestMapping(value = "/addTraining", method = RequestMethod.POST, headers="Accept=application/json")
+	public @ResponseBody void addTraining(@RequestBody Training training) 
 	{
 		trainingService.add(training);
 	}
 
 	@RequestMapping(value = "/removeTraining/{training}", method = RequestMethod.DELETE)
-	public @ResponseBody void removeTrainingService(@PathVariable("training") String training)
+	public @ResponseBody void removeTrainingService(@PathVariable("training") Training training)
 	{
 		trainingService.delete(training);
 	}

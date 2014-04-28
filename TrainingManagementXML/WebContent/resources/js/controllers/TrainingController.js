@@ -1,6 +1,7 @@
 'use strict';
 
-var TrainingController = function($scope, $http) {
+var TrainingController = function($scope, $http) 
+{
     $scope.fetchTrainingsList = function() 
     {
         $http.get('TM/trainings/trainingList').success(function(trainingList){
@@ -10,10 +11,15 @@ var TrainingController = function($scope, $http) {
 
     $scope.addNewTraining = function(newTraining) 
     {
-        $http.post('TM/trainings/addTraining/' + newTraining).success(function() {
+    	
+    	$http({
+            url: 'TM/trainings/addTraining/',
+            method: "POST",
+            data: newTraining}).success(function() {
             $scope.fetchTrainingsList();
         });
-        $scope.TrainingName = '';
+    	
+        $scope.name = '';
     };
 
     $scope.removeTraining = function(training) 
@@ -23,7 +29,7 @@ var TrainingController = function($scope, $http) {
         });
     };
 
-    $scope.removeAllCars = function() 
+    $scope.removeAllTrainings = function() 
     {
         $http.delete('TM/trainings/removeAllTrainings').success(function() {
             $scope.fetchTrainingsList();
