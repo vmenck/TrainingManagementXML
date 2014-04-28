@@ -7,7 +7,7 @@
 <div class="alert alert-info" style="width:400px;margin-left:100px;" ng-show="trainings.length == 0">
     No trainings found
 </div>
-<table class="table table-bordered table-striped" style="width:450px; margin-left: 100px;" ng-show="cars.length > 0">
+<table class="table table-bordered table-striped" style="width:450px; margin-left: 100px;" ng-show="trainings.length > 0">
     <thead>
         <tr>
             <th style="text-align: center; width: 25px;">Action</th>

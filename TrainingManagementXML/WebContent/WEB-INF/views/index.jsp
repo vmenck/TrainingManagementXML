@@ -29,9 +29,12 @@
 	<script src="/TM/resources/bootstrap/js/bootstrap.js"></script>
 	<script src="/TM/resources/js/lib/angular/angular.js"></script>
 	<script src="/TM/resources/js/lib/angular/angular-route.js"></script>
+	
 	<script src="/TM/resources/js/app.js"></script>
 	<script src="/TM/resources/js/services.js"></script>
 	<script src="/TM/resources/js/filters.js"></script>
 	<script src="/TM/resources/js/directives.js"></script>
+	
+	<script src="/TM/resources/js/controllers/TrainingController.js"></script>
 </body>
 </html>

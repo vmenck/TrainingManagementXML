@@ -3,14 +3,14 @@
 var TrainingController = function($scope, $http) {
     $scope.fetchTrainingsList = function() 
     {
-        $http.get('trainings/traininglist.json').success(function(trainingList){
+        $http.get('TM/trainings/trainingList').success(function(trainingList){
             $scope.trainings = trainingList;
         });
     };
 
     $scope.addNewTraining = function(newTraining) 
     {
-        $http.post('trainings/addaddTraining/' + newTraining).success(function() {
+        $http.post('TM/trainings/addTraining/' + newTraining).success(function() {
             $scope.fetchTrainingsList();
         });
         $scope.TrainingName = '';
@@ -18,14 +18,14 @@ var TrainingController = function($scope, $http) {
 
     $scope.removeTraining = function(training) 
     {
-        $http.delete('trainings/removeaddTraining/' + training).success(function() {
+        $http.delete('TM/trainings/removeTraining/' + training).success(function() {
             $scope.fetchTrainingsList();
         });
     };
 
     $scope.removeAllCars = function() 
     {
-        $http.delete('trainings/removeAllTrainings').success(function() {
+        $http.delete('TM/trainings/removeAllTrainings').success(function() {
             $scope.fetchTrainingsList();
         });
 

@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.trainingmanagement.services.TrainingService;
+import com.trainingmanagement.services.TrainingServiceImpl;
 
 @Controller
 @RequestMapping("/trainings")
 public class TrainingController 
 {
 	@Autowired
-	private TrainingService trainingService;
+	private TrainingServiceImpl trainingService;
 
-	@RequestMapping("/traininglist.json")
+	@RequestMapping("/trainingList")
 	public @ResponseBody
 	List<String> getTrainingList() 
 	{

@@ -1,5 +1,6 @@
 package com.trainingmanagement.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -7,30 +8,34 @@ import org.springframework.stereotype.Service;
 @Service("trainingService")
 public class TrainingServiceImpl implements TrainingService 
 {
+	
+	private static List<String> trainingList = new ArrayList<String>();
 
 	@Override
 	public List<String> getAllTraining() 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return trainingList;
 	}
 
 	@Override
 	public void add(String trainig) 
 	{
-		// TODO Auto-generated method stub	
+		trainingList.add(trainig);
 	}
 
 	@Override
 	public void delete(String trainig) 
 	{
-		// TODO Auto-generated method stub	
+        if (trainingList.contains(trainig)) 
+        {
+        	trainingList.remove(trainig);
+        }
 	}
 
 	@Override
 	public void deleteAll() 
 	{
-		// TODO Auto-generated method stub	
+		trainingList.clear();
 	}
 
 }
