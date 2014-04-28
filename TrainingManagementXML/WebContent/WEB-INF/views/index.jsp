@@ -14,22 +14,16 @@
 	<div id="wrapper">
 			
 		<hr class="" />
+		
 		<ul class="">
-			<li><a href="/TM/novaPagina">Cars</a></li>
-			<li>Trains</li>
+			<li><a href="/TM/trainings">Trainings</a></li>
 		</ul>
+		
 		<hr class="" />
-		VIEW:
+		
 		<div ng-view></div>
 
 	</div>
-	
-	<ul class="nav nav-pills">
-		<li class="active"><a href="#">Home</a></li>
-		<li><a href="#">Profile</a></li>
-		<li><a href="#">Messages</a></li>
-	</ul>
-
 
 	<script src="/TM/resources/js/lib/jquery/jquery-1.11.0.js"></script>
 	<script src="/TM/resources/bootstrap/js/bootstrap.js"></script>

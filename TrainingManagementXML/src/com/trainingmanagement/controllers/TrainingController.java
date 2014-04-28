@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.trainingmanagement.services.TrainingService;
 
 @Controller
-@RequestMapping("/training")
+@RequestMapping("/trainings")
 public class TrainingController 
 {
 	@Autowired
