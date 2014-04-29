@@ -38,7 +38,6 @@ public class TrainingServiceImpl implements TrainingService
         	if(t.getName().equals(trainig.getName()))
         	{
         		it.remove();
-        		System.out.println("Removeu " + t.getName());
         	}
         }
 	}
