@@ -24,7 +24,7 @@ var TrainingController = function($scope, $http)
 
     $scope.removeTraining = function(training) 
     {
-        $http.delete('TM/trainings/removeTraining/' + training).success(function() {
+        $http.delete('TM/trainings/removeTraining/' + training.name).success(function() {
             $scope.fetchTrainingsList();
         });
     };

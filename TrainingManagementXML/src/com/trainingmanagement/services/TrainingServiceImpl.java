@@ -1,6 +1,7 @@
 package com.trainingmanagement.services;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -28,9 +29,17 @@ public class TrainingServiceImpl implements TrainingService
 	@Override
 	public void delete(Training trainig) 
 	{
-        if (trainingList.contains(trainig)) 
+		Iterator<Training> it = trainingList.iterator();
+		
+        while(it.hasNext())
         {
-        	trainingList.remove(trainig);
+        	Training t = it.next();
+        	
+        	if(t.getName().equals(trainig.getName()))
+        	{
+        		it.remove();
+        		System.out.println("Removeu " + t.getName());
+        	}
         }
 	}
 
@@ -39,5 +48,4 @@ public class TrainingServiceImpl implements TrainingService
 	{
 		trainingList.clear();
 	}
-
 }

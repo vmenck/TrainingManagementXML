@@ -34,9 +34,11 @@ public class TrainingController
 	}
 
 	@RequestMapping(value = "/removeTraining/{training}", method = RequestMethod.DELETE)
-	public @ResponseBody void removeTrainingService(@PathVariable("training") Training training)
+	public @ResponseBody void removeTrainingService(@PathVariable("training") String training)
 	{
-		trainingService.delete(training);
+		Training t = new Training();
+		t.setName(training);
+		trainingService.delete(t);
 	}
 
 	@RequestMapping(value = "/removeAllTrainings", method = RequestMethod.DELETE)
@@ -50,5 +52,4 @@ public class TrainingController
 	{
 		return "training/layout";
 	}
-
 }

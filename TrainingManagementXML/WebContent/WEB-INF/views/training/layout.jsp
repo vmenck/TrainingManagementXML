@@ -1,6 +1,10 @@
 <div class="input-append" ng>
-    <input style="width:358px; margin-left: 100px;" class="span2" type="text" ng-model="newTraining.name" required min="1" />
-    <input style="width:358px; margin-left: 100px;" class="span2" type="text" ng-model="newTraining.cargaHoraria" required min="1" />
+     
+     <input style="width:358px; margin-left: 100px;" class="span2" type="text" ng-model="newTraining.name" required min="1" placeholder="Nome" />
+     
+   
+     <input style="width:358px; margin-left: 100px;" class="span2" type="text" ng-model="newTraining.cargaHoraria" required min="1" placeholder="Carga Horaria" />
+     
     <button class="btn btn-primary" ng-disabled="!newTraining.name" ng-click="addNewTraining(newTraining)">Add Training</button>
 </div>
 
@@ -15,7 +19,7 @@
         <tr>
             <th style="text-align: center; width: 25px;">Action</th>
             <th style="text-align: center;">Training Name</th>
-            <th style="text-align: center;">Carga HR</th>
+            <th style="text-align: center;">Carga Horária</th>
         </tr>
     </thead>
     <tbody>
@@ -35,4 +39,4 @@
     </tbody>
 </table>
 
-<button style="margin-left:100px;" class="btn btn-danger"  ng-show="trainings.length > 1" ng-click="removeAllTrainings()">Remove All Trainings</button>
+<button style="margin-left:100px;" class="btn btn-danger"  ng-show="trainings.length > 1" ng-click="removeAllTrainings()">Remove All Trainings</button>s
